@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="JEE Solve — 330 original JEE-style Physics, Chemistry and Mathematics practice questions with solutions, shortcuts, chapter filters and mock tests.">
+<title>JEE Solve V6 — Original JEE Practice Questions & Solutions</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="canonical" href="./">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"JEE Solve","description":"Original JEE-style practice questions and solutions","potentialAction":{"@type":"SearchAction","target":"./?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+</head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="grid-bg"></div>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-icon">J</span><span>JEE<span>Solve</span></span><em>V6</em></a>
+  <nav><a href="#home">Command Center</a><a href="#questions">Questions</a><a href="#chapters">Chapters</a><a href="#tests">Tests</a><a href="#progress">Analytics</a></nav>
+  <div class="actions"><button id="theme" class="round">☼</button><button class="avatar" id="profile">SC</button></div>
+</header>
+
+<main id="home" class="shell"><noscript><div style="padding:18px;background:#11142a;border:1px solid #333;border-radius:12px;margin-top:20px">JavaScript is required for the interactive search. Browse the <a href="questions/index.html">full original question bank</a>.</div></noscript>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="status"><i></i> SYSTEM ONLINE <b>JEE PREP MODE</b></div>
+    <h1>Your <span>JEE command center.</span></h1>
+    <p>Practice smarter, track every mistake, and turn daily questions into measurable progress.</p>
+    <div class="hero-buttons"><a class="btn neon" href="#questions">⚡ Start solving</a><a class="btn glass" href="#tests">Take a mock →</a></div>
+    <div class="mini-proof"><span>◉ 12 demo questions</span><span>◉ 3 subjects</span><span>◉ Local progress</span></div>
+  </div>
+  <div class="hero-panel glass-panel">
+    <div class="panel-top"><span>PREPARATION CORE</span><b id="today">--</b></div>
+    <div class="score-ring"><div><strong id="bigPct">0%</strong><small>bank complete</small></div></div>
+    <div class="core-row"><div><small>QUESTIONS SOLVED</small><b id="solved">0</b></div><div><small>ACCURACY</small><b id="accuracy">—</b></div><div><small>TESTS</small><b id="tests">0</b></div></div>
+    <div class="meter"><div><span>Daily momentum</span><b id="momentum">0%</b></div><i id="meter"></i></div>
+  </div>
+</section>
+
+<section class="quick-grid">
+  <div class="quick physics"><span>⚛</span><div><small>PHYSICS</small><b id="phy">0</b><em>solved</em></div></div>
+  <div class="quick chemistry"><span>🧪</span><div><small>CHEMISTRY</small><b id="chem">0</b><em>solved</em></div></div>
+  <div class="quick maths"><span>∑</span><div><small>MATHEMATICS</small><b id="math">0</b><em>solved</em></div></div>
+  <div class="quick streak"><span>🔥</span><div><small>STREAK</small><b id="streak">1</b><em>day</em></div></div>
+</section>
+
+<section id="questions" class="section">
+  <div class="section-title"><div><label>01 / QUESTION LAB</label><h2>Pick your next problem.</h2><p>Filter by subject, exam, difficulty or year.</p></div>
+  <div class="search"><span>⌕</span><input id="search" placeholder="Search questions, chapters..."></div></div>
+  <div class="filters"><div class="chips"><button class="chip active" data-sub="All">ALL</button><button class="chip" data-sub="Physics">PHYSICS</button><button class="chip" data-sub="Chemistry">CHEMISTRY</button><button class="chip" data-sub="Mathematics">MATHS</button></div>
+  <div class="selects"><select id="exam"><option>All exams</option><option>JEE Main</option><option>JEE Advanced</option></select><select id="difficulty"><option>All difficulty</option><option>Easy</option><option>Medium</option><option>Hard</option></select><select id="year"><option>All years</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select></div></div>
+  <div id="grid" class="question-grid"></div>
+</section>
+
+<section id="chapters" class="section alt">
+  <div class="section-title"><div><label>02 / CHAPTER MAP</label><h2>Navigate the syllabus.</h2><p>Jump directly into a topic.</p></div></div>
+  <div id="chaptersGrid" class="chapter-grid"></div>
+</section>
+
+<section id="tests" class="section">
+  <div class="section-title"><div><label>03 / TEST CENTER</label><h2>Enter exam mode.</h2><p>Timed practice with a focused interface.</p></div></div>
+  <div class="tests-grid">
+    <article class="test-card purple"><div class="test-icon">⚡</div><span>SPRINT</span><h3>5-Minute JEE Sprint</h3><p>5 mixed questions · speed + accuracy</p><button class="btn neon" onclick="startTest()">Launch test →</button></article>
+    <article class="test-card cyan"><div class="test-icon">🎯</div><span>DRILL</span><h3>Physics Precision Drill</h3><p>4 physics questions · focused practice</p><button class="btn glass" onclick="physicsTest()">Launch test →</button></article>
+  </div>
+</section>
+
+<section id="progress" class="section">
+  <div class="analytics">
+    <div><label>04 / ANALYTICS</label><h2>See your preparation move.</h2><p>Your progress is saved in this browser. Connect V7 to a real database when you are ready for accounts and cloud sync.</p>
+    <div class="analytics-row"><div><small>SOLVED</small><b id="pSolved">0</b></div><div><small>BOOKMARKS</small><b id="pBooks">0</b></div><div><small>TESTS</small><b id="pTests">0</b></div></div></div>
+    <div class="radar"><div class="radar-line"></div><strong id="analyticsPct">0%</strong><span>COMPLETE</span></div>
+  </div>
+</section>
+
+<section class="footer-cta"><div><label>READY?</label><h2>Make every question count.</h2></div><a class="btn neon" href="#questions">Open question lab →</a></section>
+</main>
+
+<footer><div class="brand"><span class="brand-icon">J</span><span>JEE<span>Solve</span></span><em>V6</em></div><span>Built as a colourful JEE preparation command center.</span><a href="admin/index.html">Admin CMS</a></footer>
+
+<div id="modal" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalBody"></div></div></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
